@@ -1,4 +1,5 @@
 :root {
+  /* https://coolors.co/00cc99-ebfdff-002b3d-342e37-f5f0f9 */
   --sea-green-crayola: #00f5bc;
   --aquamarine: rgb(133, 255, 224);
   --caribbean-green: rgb(0, 204, 153);
@@ -26,11 +27,13 @@ body {
     var(--aquamarine),
     var(--caribbean-green)
   );
-  height: 100%;
+  min-height: 600px;
 }
 
 .content {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  width: 90%;
+  height: 70%;
 }
 
 h1 {
@@ -41,15 +44,15 @@ h1 {
 }
 
 #card-container {
-  height: 688px;
-  width: 690px;
+  height: 75%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 20%);
 }
 
 .scene {
-  height: 172px;
-  width: 138px;
+  height: 100%;
+  width: 100%;
   perspective: 600px;
 }
 
@@ -71,7 +74,7 @@ h1 {
   align-items: center;
   font-family: "Gluten", cursive;
 
-  font-size: 5rem;
+  font-size: 2rem;
   color: var(--prussian-blue);
   border-top: 2px solid var(--white);
   border-left: 2px solid var(--white);
@@ -133,4 +136,20 @@ button:hover,
 button:active {
   background-color: var(--celadon-blue);
   color: var(--azure-web-color);
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    width: 500px;
+  }
+
+  .card-face {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    width: 600px;
+  }
 }
