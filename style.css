@@ -1,0 +1,120 @@
+:root {
+  /* https://coolors.co/25283d-8f3985-a675a1-cea2ac-faf3f0 */
+  font-family: "Roboto Mono", monospace;
+  --space-cadet: #25283d;
+  --plum: #8f3985;
+  --pearly-purple: #a675a1;
+  --thistle: #d7c1d5;
+  --tuscany: #cea2ac;
+  --isabelline: #faf3f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--space-cadet);
+}
+
+.content {
+  margin-top: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--isabelline);
+}
+
+#card-container {
+  height: 688px;
+  width: 690px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.scene {
+  height: 172px;
+  width: 138px;
+  perspective: 600px;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: var(--space-cadet);
+  border-top: 1px solid var(--space-cadet);
+  border-left: 1px solid var(--space-cadet);
+}
+
+.front {
+  background: var(--thistle);
+  transition: 0.2s ease-in;
+}
+
+.front:hover {
+  background: var(--pearly-purple);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: var(--isabelline);
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+.button-container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 2rem;
+  padding: 0.3rem;
+  background-color: var(--isabelline);
+  border: none;
+  transition: 0.2s ease-in;
+}
+
+button:hover,
+button:active {
+  background-color: var(--pearly-purple);
+}
