@@ -1,12 +1,15 @@
 :root {
-  /* https://coolors.co/25283d-8f3985-a675a1-cea2ac-faf3f0 */
-  font-family: "Roboto Mono", monospace;
-  --space-cadet: #25283d;
-  --plum: #8f3985;
-  --pearly-purple: #a675a1;
-  --thistle: #d7c1d5;
-  --tuscany: #cea2ac;
-  --isabelline: #faf3f0;
+  --sea-green-crayola: #00f5bc;
+  --aquamarine: rgb(133, 255, 224);
+  --caribbean-green: rgb(0, 204, 153);
+  --black-coffee: #342e37;
+  --magnolia: #f5f0f9;
+  --celeste: #d6faff;
+  --celadon-blue: #003a52;
+  --white: #ffffff;
+  --azure-web-color: #ebfdff;
+  --prussian-blue: #002b3d;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
 
 * {
@@ -18,7 +21,12 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: var(--space-cadet);
+  background: linear-gradient(
+    to bottom,
+    var(--aquamarine),
+    var(--caribbean-green)
+  );
+  height: 100%;
 }
 
 .content {
@@ -29,7 +37,7 @@ h1 {
   font-size: 4rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--isabelline);
+  color: var(--black-coffee);
 }
 
 #card-container {
@@ -61,24 +69,27 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Gluten", cursive;
+
   font-size: 5rem;
-  color: var(--space-cadet);
-  border-top: 1px solid var(--space-cadet);
-  border-left: 1px solid var(--space-cadet);
+  color: var(--prussian-blue);
+  border-top: 2px solid var(--white);
+  border-left: 2px solid var(--white);
 }
 
 .front {
-  background: var(--thistle);
+  background: var(--celeste);
   transition: 0.2s ease-in;
 }
 
 .front:hover {
-  background: var(--pearly-purple);
+  background: var(--celadon-blue);
+  color: var(--azure-web-color);
 }
 
 .back {
   transform: rotateY(180deg);
-  background: var(--isabelline);
+  background: var(--white);
 }
 
 .card.is-flipped {
@@ -92,7 +103,7 @@ h1 {
   height: 100%;
   width: 100%;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(245, 240, 249, 0.4);
 }
 
 .hidden {
@@ -109,12 +120,17 @@ h1 {
 button {
   font-size: 2rem;
   padding: 0.3rem;
-  background-color: var(--isabelline);
+  background-color: var(--celeste);
   border: none;
   transition: 0.2s ease-in;
+  border: 2px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover,
 button:active {
-  background-color: var(--pearly-purple);
+  background-color: var(--celadon-blue);
+  color: var(--azure-web-color);
 }
